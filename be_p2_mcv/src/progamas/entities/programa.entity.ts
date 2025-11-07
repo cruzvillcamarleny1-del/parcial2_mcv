@@ -24,6 +24,9 @@ export class Programa {
   @Column('varchar', { length: 2000 })
   descripcion: string;
 
+  @Column('varchar', { length: 255, name: 'modalidad_clases' })
+  modalidadClases: string;
+
   @Column('int')
   version: number;
 

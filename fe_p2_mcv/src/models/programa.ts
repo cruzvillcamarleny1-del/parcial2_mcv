@@ -10,5 +10,6 @@ export interface Programa {
   costo: number
   fechaInicio: Date | string
   estado: string
+  modalidadClases?: string
   nivelAcademico: NivelAcademico
 }

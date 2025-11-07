@@ -25,6 +25,7 @@ export class ProgramasService {
       idNivelAcademico: createProgramaDto.idNivelAcademico,
       nombre: createProgramaDto.nombre.trim(),
       descripcion: createProgramaDto.descripcion.trim(),
+      modalidadClases: createProgramaDto.modalidadClases.trim(),
       version: createProgramaDto.version,
       duracionMeses: createProgramaDto.duracionMeses,
       costo: createProgramaDto.costo,

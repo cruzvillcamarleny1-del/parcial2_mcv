@@ -51,6 +51,7 @@ defineExpose({ obtenerLista })
           <th>Duración (meses)</th>
           <th>Costo</th>
           <th>Fecha Inicio</th>
+          <th>Modalidad</th>
           <th>Estado</th>
           <th>Acciones</th>
         </tr>
@@ -65,6 +66,7 @@ defineExpose({ obtenerLista })
           <td>{{ programa.duracionMeses }}</td>
           <td>{{ programa.costo ? Number(programa.costo).toFixed(2) : '0.00' }} Bs</td>
           <td>{{ typeof programa.fechaInicio === 'string' ? programa.fechaInicio.split('T')[0] : programa.fechaInicio }}</td>
+          <td>{{ programa.modalidadClases || 'N/A' }}</td>
           <td>{{ programa.estado }}</td>
           <td>
             <Button icon="pi pi-pencil" aria-label="Editar" text @click="emitirEdicion(programa)" />

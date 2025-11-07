@@ -35,6 +35,12 @@ const estadosDisponibles = [
   { label: 'Finalizado', value: 'Finalizado' }
 ]
 
+const modalidadesDisponibles = [
+  { label: 'Presencial', value: 'Presencial' },
+  { label: 'Virtual', value: 'Virtual' },
+  { label: 'Mixto', value: 'Mixto' }
+]
+
 const programa = ref<Programa>({ ...props.programa })
 const nivelesAcademicos = ref<any[]>([])
 const fechaInicioDate = ref<Date | null>(null)
@@ -94,6 +100,7 @@ async function handleSave() {
       idNivelAcademico: programa.value.idNivelAcademico,
       nombre: programa.value.nombre,
       descripcion: programa.value.descripcion,
+      modalidadClases: programa.value.modalidadClases,
       version: programa.value.version,
       duracionMeses: programa.value.duracionMeses,
       costo: programa.value.costo,
@@ -174,6 +181,18 @@ async function handleSave() {
       <div class="mb-4">
         <label for="estado" class="font-semibold block mb-1">Estado</label>
         <Select id="estado" v-model="programa.estado" :options="estadosDisponibles" optionLabel="label" optionValue="value" class="w-full" />
+      </div>
+
+      <div class="mb-4">
+        <label for="modalidadClases" class="font-semibold block mb-1">Modalidad de Clases</label>
+        <Select
+          id="modalidadClases"
+          v-model="programa.modalidadClases"
+          :options="modalidadesDisponibles"
+          optionLabel="label"
+          optionValue="value"
+          class="w-full"
+        />
       </div>
       <div class="flex justify-end gap-2">
         <Button
